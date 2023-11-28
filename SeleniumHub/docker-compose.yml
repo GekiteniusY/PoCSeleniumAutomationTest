@@ -1,0 +1,11 @@
+version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub:3.14.0-helium
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    environment:
+      - GRID_BROWSER_TIMEOUT=120 # ブラウザのタイムアウト
+      - GRID_TIMEOUT=150 # hubがnodeを未使用の状態だ判断するまでの時間
+      - GRID_MAX_SESSION=30 # 最大セッション数
